@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MY Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+    <div class="container login-container">
+        <header>
+            <h1>Login Page</h1>
+        </header>
+
+        <div class="content">
+            <!-- Form points to POST /login -->
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+
+                <!-- Show error if passed from controller -->
+                <div id="errorMessage" class="error-message" th:style="${error} ? 'display: block' : 'display: none'">
+                    Username atau password salah.
+                </div>
+
+                <div class="button-section" style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 20px;">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
