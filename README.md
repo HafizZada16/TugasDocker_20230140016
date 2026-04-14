@@ -1,4 +1,4 @@
-Screenshot 10 hal :
+Praktikum6
 1. Halaman image docker desktop (setelah push image project dan pull image dari
 teman)
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/4576f7a3-42da-461e-990d-2a9cd3a1981a" />
@@ -10,6 +10,7 @@ teman)
 
 ---
 3. Halaman web masing masing pastikan di run dari docker 4 screenshot :
+
 • Halaman login
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/739ca706-5a34-4158-a85e-d5090a7dc4e3" />
 
@@ -24,6 +25,7 @@ teman)
 
 ---
 4. Halaman web teman yang di pull 4 screenshot:
+
 • Halaman login
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/3a315cc4-d370-4433-ba2a-b988c4facb5d" />
 
