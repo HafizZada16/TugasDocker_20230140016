@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home - MY Website</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" th:href="@{/style.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>MY Website 20230140016</h1>
+            </header>
+
+            <div class="content">
+                <p style="margin-bottom: 10px; font-size: 0.95rem">
+                    Selamat datang di aplikasi!
+                </p>
+                <a th:href="@{/form}" class="nav-link"
+                    >+ Input Data Mahasiswa</a
+                >
+
+                <h2
+                    style="
+                        font-size: 1rem;
+                        margin-bottom: 15px;
+                        font-weight: 700;
+                    "
+                >
+                    Data Mahasiswa
+                </h2>
+                <table id="mahasiswaTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%">No</th>
+                            <th style="width: 30%">Nama</th>
+                            <th style="width: 30%">NIM</th>
+                            <th style="width: 30%">Jenis Kelamin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Check if students list is empty -->
+                        <tr th:if="${#lists.isEmpty(students)}">
+                            <td colspan="4" class="empty-row">
+                                Belum ada data
+                            </td>
+                        </tr>
+                        <!-- Loop through students -->
+                        <tr th:each="student, stat : ${students}">
+                            <td th:text="${stat.count}">1</td>
+                            <td th:text="${student.nama}">Nama</td>
+                            <td th:text="${student.nim}">NIM</td>
+                            <td th:text="${student.gender}">Jenis Kelamin</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <footer>
+                <a th:href="@{/logout}" class="logout-link">Logout</a>
+            </footer>
+        </div>
+    </body>
+</html>
